@@ -14,8 +14,6 @@
 
 Route::get('/', 'HomeController@index');
 
-//Route::get('/course/{id}', 'BlogController@show');
-
 Route::get('/course', 'CourseController@index');
 
 Route::get('/course/{id}', 'CourseController@show');
