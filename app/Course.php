@@ -13,8 +13,23 @@ class Course extends Model
     	return $this->belongsTo('Category::class');
     }
 
+     public function author()
+     {
+        return $this->belongsTo(User::class);
+  	 }
+
     public function video(){
     	return $this->hasMany('Video::class');
+    }
+
+    public function videos()
+    {
+        return $this->hasMany(Video::class);
+    }
+
+    public function wishlists()
+    {
+        return $this->hasMany(Wishlist::class);
     }
 
 }

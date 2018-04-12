@@ -28,13 +28,15 @@ class User extends Authenticatable
     ];
 
 
-    public function whislist(){
-        return $this->belongsToMany('Course::class', 'whislists', 'user_id', 'course_id');
+    public function wishlists()
+    {
+        return $this->belongsToMany(Course::class, 'wishlists', 'user_id', 'course_id');
     }
 
-     public function enroll(){
-        return $this->belongsToMany('Course::class', 'course_users', 'user_id', 'course_id');
+    public function enrolledCourses()
+    {
+        return $this->belongsToMany(Course::class, 'course_users', 'user_id','course_id');
     }
-}
+
 }
 
