@@ -26,4 +26,15 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+    public function whislist(){
+        return $this->belongsToMany('Course::class', 'whislists', 'user_id', 'course_id');
+    }
+
+     public function enroll(){
+        return $this->belongsToMany('Course::class', 'course_users', 'user_id', 'course_id');
+    }
 }
+}
+

@@ -1,0 +1,38 @@
+--Design Table
+
+course
+	-id 
+	-slug
+	-title
+	-description
+	-thumbnail
+	-rating
+	-price
+	-student_count
+	-status
+	-category_id
+	-author_id
+
+video
+	-id
+	-title
+	-order
+	-path
+	-course_id
+
+categories
+	-id
+	-slug
+	-name
+	-description
+
+whislist
+	-id
+	-id_user
+	-id_course
+
+course_user
+	-id
+	-id_user
+	-id_course
+	-price

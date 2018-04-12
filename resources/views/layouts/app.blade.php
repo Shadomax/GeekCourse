@@ -16,16 +16,18 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">GeekCourse</a>
+          <a class="navbar-brand" href="/"><span style="font-size: 28px;"><span style="font-weight: bold;">Geek</span>Course</span></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
         
            <ul class="nav navbar-nav">
           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Category <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Dropdown Link 1</a></li>
-                            <li><a href="#">Dropdown Link 2</a></li>
-                            <li><a href="#">Dropdown Link 3</a></li>
+                          @foreach($category as $row)
+                              <li><a href="{{$row->slug}}">{{$row->name}}</a></li>
+                              
+                          @endforeach
+                            
                             <li class="divider"></li>
                             <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown Link 4</a>
                                 <ul class="dropdown-menu">

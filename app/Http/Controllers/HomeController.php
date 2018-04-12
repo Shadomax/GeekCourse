@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Course;
+use App\Category;
+;
+
 class HomeController extends Controller
 {
     /**
@@ -13,7 +17,23 @@ class HomeController extends Controller
      */
     public function index()
     {
-         return view('home.index');
+
+        $coursePopular = Course::where('student_count','>=', 50)
+               ->orderBy('id')
+               ->take(8)
+               ->get();
+
+       $courseRecommendation = Course::where('rating','>=', 4)
+               ->orderBy('id')
+               ->take(8)
+               ->get();
+
+        $category = Category::All();
+
+
+
+        //dd($course);
+        return view('home.index', ['coursePopular' => $coursePopular,'courseRecommendation' => $courseRecommendation,'category' => $category]);
 
     }
 
